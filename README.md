@@ -2,6 +2,8 @@
 
 ### Trabajo Práctico Integrador - JAVA
 ![jacachico](https://github.com/23649-Spring-Codo-a-Codo/C23649-Grupo2-TPIntegrador/assets/95290077/aa2815e1-ff65-41ad-915e-e6c46e7030e3)
+![alkemy](https://github.com/Alkemy-Java/ProyectoBiblioteca/assets/95290077/6ab69b7a-7b18-4e6f-9395-7c4d81f03e54)
+
 
 #### Objetivo
 El objetivo de este proyecto es desarrollar una aplicación de gestión de
