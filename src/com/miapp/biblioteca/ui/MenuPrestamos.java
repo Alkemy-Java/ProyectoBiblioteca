@@ -28,7 +28,7 @@ public class MenuPrestamos implements MenuCRUD<PrestamosService> {
         String idUsuario = scanner.nextLine();
 
         prestamosService.crearPrestamo(idPrestamo, ISBN, idUsuario);
-        System.out.println("Usuario creado correctamente.");
+        System.out.println("Prestamo creado correctamente.");
     }
 
     @Override
@@ -84,7 +84,7 @@ public class MenuPrestamos implements MenuCRUD<PrestamosService> {
         String idPrestamo = scanner.next();
 
         prestamosService.deletePrestamo(idPrestamo);
-        System.out.println("Usuario borrado correctamente.");
+        System.out.println("Prestamo borrado correctamente.");
     }
 
     public void mostrarMenu() {
@@ -94,7 +94,7 @@ public class MenuPrestamos implements MenuCRUD<PrestamosService> {
             System.out.println("2 - Listar todos los prestamos");
             System.out.println("3 - Listar prestamo por ID");
             System.out.println("4 - Actualizar prestamo");
-            System.out.println("5 - Borrar prestamo");
+            System.out.println("5 - Devolución (Borrar prestamo)");
             System.out.println("0 - Menu anterior");
 
             Scanner sc = new Scanner(System.in);

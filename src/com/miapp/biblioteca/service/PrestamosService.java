@@ -6,6 +6,7 @@ import com.miapp.biblioteca.Usuarios;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PrestamosService {
 
@@ -145,6 +146,27 @@ public class PrestamosService {
 
     // Eliminar (DELETE)
     public void deletePrestamo(String idPrestamo) {
-        prestamos.removeIf(prestamos -> prestamos.getIdPrestamo().equals(idPrestamo));
+        Iterator<Prestamos> iterator = prestamos.iterator();
+        while (iterator.hasNext()) {
+            Prestamos prestamo = iterator.next();
+            if (prestamo.getIdPrestamo().equals(idPrestamo)) {
+                Libros libro = prestamo.getLibro();
+                Usuarios usuario = prestamo.getUsuario();
+
+                // Marcar el libro como disponible
+                libro.setDisponible(true);
+                System.out.println("Libro marcado como disponible: " + libro.getISBN());
+
+                // Eliminar el libro de la lista de libros prestados del usuario
+                usuario.getLibrosPrestados().remove(libro);
+                System.out.println("Libro eliminado de la lista de libros prestados del usuario.");
+
+                // Utilizar el iterador para eliminar el préstamo
+                iterator.remove();
+                System.out.println("Préstamo eliminado correctamente.");
+
+                break; // Termina el bucle después de encontrar y eliminar el préstamo
+            }
+        }
     }
 }
